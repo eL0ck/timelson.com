@@ -1,6 +1,6 @@
 ---
 title: "GCP Datalab/ML-Engine - Walkthrough"
-date: 2018-09-14T08:23:19+10:00
+date: 2018-10-12T08:23:19+10:00
 draft: false
 tags:
   - GCP
@@ -9,7 +9,7 @@ tags:
   - Jupyter
 ---
 
-In the following guide I use Google Cloud Platform (GCP) tools to work through an example modeling project from data exploration and development, to model training and finally the deployment of a prediction endpoint.
+In the following guide I use Google Cloud Platform (GCP) tools to work through an example modelling project from data exploration and development, to model training and finally the deployment of a prediction endpoint.
 
 ***This guide is part of a longer discussion comparing [Cloud Machine Learning Tools]( {{< relref path="CDS-1_Intro.md" >}} )***
 
@@ -23,14 +23,14 @@ GCP offer two services to achieve our aims:
 
 ## Requirements
 
-This walkthrough requires:
+This walk-through requires:
 
 - A [GCP account](console.cloud.google.com). Sign up for $400 free credit.
 - (Optional) Locally installed `gcloud` command line utilities: [Installing Google Cloud SDK](https://cloud.google.com/sdk/install)
 
 If you choose not to install `gcloud` you may use the [Cloud Shell](https://cloud.google.com/shell/docs/) utility available when you open up the GCP console but be aware, Datalab will perform more slowly for reasons to be discussed in the review.
 
-Lets get started.
+Let's get started.
 
 ## 1. Test Hosted Development Environment
 
@@ -72,9 +72,9 @@ The complete process is shown end-to-end in the notebook `Platform-Comparison/ML
 
 We assume our project will use vast amounts of data.  Realistically we will use [Google Cloud Storage](https://cloud.google.com/storage/) since we can store any data at very low costs.
 
-First create a bucket in your region and give the service account access to it.  We'll copy the test and training data to the bucket where it can be later pulled by the training jobs.
+First, create a bucket in your region and give the service account access to it.  We'll copy the test and training data to the bucket where it can be later pulled by the training jobs.
 
-*In practise our production datapipeline would be filling up our datastores, all we need is permission to access it.*
+*In practice our production data-pipeline would be filling up our datastores, all we need is permission to access it.*
 
 ```bash
 gsutil mb -p ${PROJECT} -l ${REGION} gs://${BUCKET}
@@ -111,12 +111,12 @@ And ...
 gcloud ml-engine local predict ...
 ```
 
-This is vital since it can be very slow way to resolve simple mistakes by submitting to remote machines and waiting for the log output.
+This is vital since it can be very slow to resolve simple mistakes by submitting to remote machines and waiting for the log output.
 
 
 ## 3. Accelerated Training
 
-Up till now we will have been training with very small step number to ensure the model compiles. The plan is to use Google cloud resources to perform thorough training that we can't perform with on-premise machines.
+Up till now, we will have been training with very small step number to ensure the model compiles. The plan is to use Google cloud resources to perform thorough training that we can't perform with on-premise machines.
 
 Now that we are ready to send the job off we can increase the training steps and give the model much more resources by setting the [Scale Tier](https://cloud.google.com/ml-engine/docs/tensorflow/machine-types).
 
@@ -156,7 +156,7 @@ task.py: error: unrecognized arguments: --job-dir ...
 
 *So, we have a trained model and are happy with its accuracy.  How are we going to use it?*
 
-This is where your devops team pops in to try and make sense of the abhorrent mess you've made in your radically divergent feature branch.  Over the course of some weeks they are going to interpret the undocumented manual steps that you use to superstitiously run the model and cobble it into a delivery pipeline.  You'll also need an architect and a team of developers to implement a service structure so that model clients, internal or external, can actually use it in a way decoupled from you and your ongoing research.
+This is where your DevOps team pops in to try and make sense of the abhorrent mess you've made in your radically divergent feature branch.  Over the course of some weeks, they are going to interpret the undocumented manual steps that you use to superstitiously run the model and cobble it into a delivery pipeline.  You'll also need an architect and a team of developers to implement a service structure so that model clients, internal or external, can actually use it in a way decoupled from you and your ongoing research.
 
 Or ... you can have GCP do that for you.
 
@@ -177,7 +177,7 @@ This has deployed a REST endpoint that is publicly accessible from the internet 
 
 *Really?! Its all done??*
 
-Lets be convinced.
+Let's be convinced.
 
 Authenticate as a member of the project and send some test data.
 
