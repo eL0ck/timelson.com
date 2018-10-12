@@ -1,5 +1,5 @@
 ---
-title: "GCP Datalab/ML-Engine - Walkthrough"
+title: "GCP Datalab/ML-Engine - Walk-through"
 date: 2018-10-12T08:23:19+10:00
 draft: false
 tags:

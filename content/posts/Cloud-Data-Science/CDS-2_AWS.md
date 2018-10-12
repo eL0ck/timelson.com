@@ -1,5 +1,5 @@
 ---
-title: "AWS Sagemaker - Walkthrough"
+title: "AWS Sagemaker - Walk-through"
 date: 2018-10-12T08:23:19+10:00
 draft: false
 tags:
@@ -19,7 +19,7 @@ In the following guide, I use Amazon Web Services (AWS) tools to work through an
 
 ## Requirements
 
-This walkthrough requires:
+This walk-through requires:
 
 - An [AWS account](https://aws.amazon.com/). New users get free credit on 'free tier' items.
 
