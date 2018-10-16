@@ -11,24 +11,24 @@ tags:
 
 In the following guide I use Google Cloud Platform (GCP) tools to work through an example modelling project from data exploration and development, to model training and finally the deployment of a prediction endpoint.
 
-***This guide is part of a longer discussion comparing [Cloud Machine Learning Tools]( {{< relref path="CDS-1_Intro.md" >}} )***
+***This guide is part of a longer discussion: [Part 1. Cloud Machine Learning Tools]( {{< relref path="CDS-1_Intro.md" >}} ) and [Part 2. Detailed Platform Review]( {{< relref path="CDS-4_Detailed.md" >}} )***
 
 ---
 
 GCP offer two services to achieve our aims:
 
-**1. [Datalab](https://cloud.google.com/datalab/)** - a hosted version of the [jupyter notebook](http://jupyter.org/).  It has all the same shortcut keys (unlike the frustrating [CoLabratory Notebooks](https://research.google.com/colaboratory/faq.html) you may have used in Google Drive).  Really the only significant differences to your local instance is the styling and [Ungit](https://github.com/FredrikNoren/ungit) for accessing git repositories.
+**1. Datalab^[https://cloud.google.com/datalab/]** - a hosted version of the jupyter notebook^[http://jupyter.org/].  It has all the same shortcut keys (unlike the frustrating CoLabratory Notebooks^[https://research.google.com/colaboratory/faq.html] you may have used in Google Drive).  Really the only significant differences to your local instance is the styling and Ungit^[https://github.com/FredrikNoren/ungit] for accessing git repositories.
 
-**2. [ML-Engine](https://cloud.google.com/ml-engine/docs/)** - the GCP service for managing remote training jobs, models, endpoints.
+**2. ML-Engine^[https://cloud.google.com/ml-engine/docs/]** - the GCP service for managing remote training jobs, models, endpoints.
 
 ## Requirements
 
 This walk-through requires:
 
-- A [GCP account](console.cloud.google.com). Sign up for $400 free credit.
+- A GCP account^[https://console.cloud.google.com]. Sign up for $400 free credit.
 - (Optional) Locally installed `gcloud` command line utilities: [Installing Google Cloud SDK](https://cloud.google.com/sdk/install)
 
-If you choose not to install `gcloud` you may use the [Cloud Shell](https://cloud.google.com/shell/docs/) utility available when you open up the GCP console but be aware, Datalab will perform more slowly for reasons to be discussed in the review.
+If you choose not to install `gcloud` you may use the Cloud Shell^[https://cloud.google.com/shell/docs/] utility available when you open up the GCP console but be aware, Datalab will perform more slowly for reasons to be discussed in the review.
 
 Let's get started.
 
@@ -48,7 +48,7 @@ datalab create dlvm --zone australia-southeast1-b
 Wait for the instance to spin-up (can take up to 5 minutes!).  When the machine is ready and an SSH tunnel is connected the command will return instructions to open the browser via a local port.
 
 ### Clone a repository
-Datalab provides [Ungit](https://github.com/FredrikNoren/ungit) for git repository management.  This is a really slick tool.  If you have 6 minutes to be convinced of this, watch [this video](https://github.com/FredrikNoren/ungit) from creator Fredrik Noren.
+Datalab provides Ungit for git repository management.  This is a really slick tool.  If you have 6 minutes to be convinced of this, watch [this video](https://github.com/FredrikNoren/ungit) from creator Fredrik Noren.
 
 Open it from the icon in the top right corner of the Datalab index page and clone the demo:
 
@@ -70,7 +70,7 @@ The complete process is shown end-to-end in the notebook `Platform-Comparison/ML
 
 ### Project setup
 
-We assume our project will use vast amounts of data.  Realistically we will use [Google Cloud Storage](https://cloud.google.com/storage/) since we can store any data at very low costs.
+We assume our project will use vast amounts of data.  Realistically we will use Google Cloud Storage^[https://cloud.google.com/storage/] since we can store any data at very low costs.
 
 First, create a bucket in your region and give the service account access to it.  We'll copy the test and training data to the bucket where it can be later pulled by the training jobs.
 
@@ -198,4 +198,5 @@ curl -X POST \
 
 ---
 
-To read more about how GCP and AWS compare for this task go to: [Cloud Machine Learning Tools]( {{< relref path="CDS-1_Intro.md" >}} )
+***To read more about how GCP and AWS compare for this task go to:  [Part 2. Detailed Platform Review]( {{< relref path="CDS-4_Detailed.md#review" >}} )***
+

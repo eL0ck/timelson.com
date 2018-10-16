@@ -11,17 +11,17 @@ tags:
 
 In the following guide, I use Amazon Web Services (AWS) tools to work through an example modelling project from data exploration and development, to model training and finally the deployment of a prediction endpoint.
 
-***This guide is part of a longer discussion comparing [Cloud Machine Learning Tools]( {{< relref path="CDS-1_Intro.md" >}} )***
+***This guide is part of a longer discussion: [Part 1. Cloud Machine Learning Tools]( {{< relref path="CDS-1_Intro.md" >}} ) and [Part 2. Detailed Platform Review]( {{< relref path="CDS-4_Detailed.md" >}} )***
 
 ---
 
-[AWS Sagemaker](https://aws.amazon.com/sagemaker/) is the service on offer to meet these requirements.
+AWS Sagemaker^[https://aws.amazon.com/sagemaker/] is the service on offer to meet these requirements.
 
 ## Requirements
 
 This walk-through requires:
 
-- An [AWS account](https://aws.amazon.com/). New users get free credit on 'free tier' items.
+- An AWS account^[https://aws.amazon.com/]. New users get free credit on *free tier* items.
 
 Let's get started.
 
@@ -158,5 +158,5 @@ Cool.
 Currently, I am unable to actually get predictions from my deployed endpoint despite using an off-the-shelf serving function shown to work in Google ML-Engine.
 
 ---
-To read more about how GCP and AWS compare for this task go to: [Cloud Machine Learning Tools]( {{< relref path="CDS-1_Intro.md" >}} )
+***To read more about how GCP and AWS compare for this task go to:  [Part 2. Detailed Platform Review]( {{< relref path="CDS-4_Detailed.md#review" >}} )***
 

@@ -68,13 +68,18 @@ Finally, we will talk in general about other comparative advantages and disadvan
 
 ## The Test Case: Iris Identification using TensorFlow
 
-To mock the process we use the [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set).  For those not familiar with it, it is the *Hello world* of data science.
+To mock the process we use the Iris dataset^[https://en.wikipedia.org/wiki/Iris_flower_data_set].  For those not familiar with it, it is the *Hello world* of data science.
 
-We choose [TensorFlow](https://www.tensorflow.org/) because it is officially supported by both [GCP ML-Engine](https://cloud.google.com/ml-engine/docs/) and [AWS Sagemaker](https://docs.aws.amazon.com/sagemaker/latest/dg/tf.html) and is probably the most popular framework for implementing neural networks with growing momentum.  It also topped the general category *Most Loved Frameworks, Libraries and Tools* section of the [2018 Stack-overflow Developer Survey](https://insights.stackoverflow.com/survey/2018#technology) competing in a broad category including React and Django.  Furthermore, it is heavily used and supported by Google for their in-house ML.  Compared to [other common alternatives](https://insights.stackoverflow.com/trends?tags=tensorflow%2Ctheano%2Ccaffe%2Cscikit-learn&utm_source=so-owned&utm_medium=blog&utm_campaign=gen-blog&utm_content=blog-link&utm_term=incredible-growth-python) it is vastly more discussed in questions on StackOverflow.
+We choose TensorFlow because it is officially supported by both GCP ML-Engine^[https://cloud.google.com/ml-engine/docs/] and AWS Sagemaker^[https://docs.aws.amazon.com/sagemaker/latest/dg/tf.html] and is probably the most popular framework for implementing neural networks with growing momentum.  It topped the general category *Most Loved Frameworks, Libraries and Tools* section of the [2018 Stack-overflow Developer Survey](https://insights.stackoverflow.com/survey/2018#technology-most-loved-dreaded-and-wanted-frameworks-libraries-and-tools) competing in a broad category including React and Django.  Furthermore, it is heavily used and supported by Google for their in-house ML.  Compared to other common alternatives it is vastly more discussed in questions on StackOverflow.
+
+{{< figure src="/CDS/tf_alternatives.png" link="https://insights.stackoverflow.com/trends?tags=tensorflow%2Ctheano%2Ccaffe%2Cscikit-learn&utm_source=so-owned&utm_medium=blog&utm_campaign=gen-blog&utm_content=blog-link&utm_term=incredible-growth-python" >}}
 
 At a low-level it is a well designed numerical library optimized for high-performance architectures.  Whilst offering a large number of the most popular machine learning algorithms as pre-rolled estimators, an expert user can use it to perform any numerical operations.
 
-## The Results {#results}
+
+## So whats the TL;DR? {#results}
+
+After implementing the mock problem on both platforms (See the [*Detailed Review*]( {{< relref path="CDS-4_Detailed.md" >}})) the results are:
 
 | Category                  |  AWS  |  GCP  |  Winner  | Reason |
 | ------------------------- | :---: | :---: | :---------: | --------- |
@@ -91,15 +96,16 @@ At a low-level it is a well designed numerical library optimized for high-perfor
 | **Supporting regions**    | :+1: | :-1: | ![AWS](/aws1.png) | GCP very limited |
 | **Large data sets**       | :sparkling_heart: | :-1: | ![AWS](/aws1.png) | Streaming from S3 available |
 
----
 
 ## Summary {#summary}
 
-In the end, your choice will depend on where you are currently, what your in-house cloud expertise prefers and how willing you are to adapt.  If you currently have TensorFlow models that you want to serve in the cloud and reduce server management overhead GCP MLE is a clear choice if there's a region near you.  Otherwise, it might be desirable to develop new models using Sagemaker and leverage the mature supporting infrastructure of AWS.
+In the end, your choice will depend on where you are currently, what your in-house cloud expertise prefers and how willing you are to adapt.  If you currently have TensorFlow models that you want to serve in the cloud and reduce server management overhead, GCP MLE is a clear choice provided there's a region near you.  Otherwise, it might be desirable to develop new models using Sagemaker and leverage the mature supporting infrastructure of AWS.
 
-Most importantly I hope this article prompts you to consider where your efforts are best applied and given some insight into the future of model serving at scale.
+Most importantly I hope this article has prompted you to consider where your efforts are best applied and given you some insight into the future of model serving at scale.
 
-## Appendix
+---
 
-- [Detailed feature discussion and comparison of the two cloud platforms]( {{< relref path="CDS-4_Detailed.md" >}})
+***For a more detailed feature discussion and demonstrations of the two cloud platforms [continue reading]( {{< relref path="CDS-4_Detailed.md" >}})***
+
+
 

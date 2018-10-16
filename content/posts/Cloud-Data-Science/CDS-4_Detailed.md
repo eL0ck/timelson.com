@@ -13,14 +13,14 @@ tags:
 
 ***This article follows from a prior introduction to [Cloud Data Science]( {{< relref path="CDS-1_Intro.md" >}} ) on GCP and AWS***
 
-### Walk-throughs {#walk}
+## Walk-throughs {#walk}
 
 For those interested in experiencing the tools themselves, read the following walk-throughs to set-up demo projects:
 
 - [GCP MLE/Datalab - Walk-through]( {{< relref path="CDS-3_GCP.md" >}})
 - [AWS Sagemaker - Walk-through]( {{< relref path="CDS-2_AWS.md" >}})
 
-The following notebooks are used in the demo's to demonstrate development work-flow and deployment:
+The following IPython notebooks are used in the demo's to demonstrate development work-flow and deployment:
 
 - [Model Development Workflow Example](https://github.com/eL0ck/Cloud-Data-Science/blob/master/Platform-Comparison/IrisCategorisation-TensorFlow.ipynb)
 - [MLE Deployment](https://github.com/eL0ck/Cloud-Data-Science/blob/master/Platform-Comparison/ML-Engine/IrisCategorisation-TensorFlow-MLE.ipynb)
@@ -183,6 +183,8 @@ ERROR: (gcloud.ml-engine.jobs.submit.training) INVALID_ARGUMENT: Field: region E
 ```
 
 As of the time of writing the closest regions to train and serve my model in are over 7000 kilometres away in Taiwan/Tokyo (`asia-east1`/`asia-northeast1`).
+
+---
 
 ***Return to [Cloud Data Science]( {{< relref path="CDS-1_Intro.md#summary" >}} )***
 
