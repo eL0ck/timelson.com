@@ -31,5 +31,5 @@ pygmentsCodefences = true
 
 [params]
     description = "Blog using Hugo."
-    footer = "&copy; [timelson.com](https://timelson.com) 2017 -- 2018 | [Github](https://github.com/eL0ck)"
+    footer = "&copy; [timelson.com](http://timelson.com) 2017 -- 2018 | [Github](https://github.com/eL0ck)"
 
